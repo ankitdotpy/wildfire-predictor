@@ -23,12 +23,12 @@ class TopLayer(tf.keras.layers.Layer):
         return top
 
 class Model():
-	def __init__(self,num_class):
-		self.num_class = num_class
+	def __init__(self,num_classes):
+		self.num_classes = num_classes
 
 	def model(self):
 		base = tf.keras.applications.resnet50.Resnet50(weights='imagenet',include_top=False,input_shape=(350,350,3))
-		out = TopLayer(self.num_class)(base.output)
+		out = TopLayer(self.num_classes)(base.output)
 		mod = tf.keras.models.Model(inputs=base.inputs,outputs=out)
 
 		return mod

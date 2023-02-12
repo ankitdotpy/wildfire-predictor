@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 import tensorflow as tf
-import model
 
 class train():
 	def __init__(self,dataset_path,save_path):
@@ -38,3 +37,6 @@ class train():
 			)
 
 		model.save(self.save_path)
+
+	def test():
+		pass
