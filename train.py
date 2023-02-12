@@ -10,13 +10,12 @@ class train():
 	def train(self,model):
 		gen = tf.keras.preprocessing.image.ImageDataGeneretor()
 
-		train_gen = gen.flow_from_director(
+		train_gen = gen.flow_from_directory(
 			directory = self.dataset_path+'/train'
-			traget_size=(224,224),
 			batch_size=32,
 			class_mode='categorical')
 
-		val_gen = gen.flow_from_director(
+		val_gen = gen.flow_from_directory(
 			directory = self.dataset_path+'/valid'
 			traget_size=(224,224),
 			batch_size=32,
