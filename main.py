@@ -1,4 +1,4 @@
-from train import train
+from train import Train
 from model import Model
 
 def main():
@@ -7,7 +7,7 @@ def main():
 	num_classes = 2
 
 	model = Model(num_classes).model()
-	train = train(dataset_path,save_path)
+	train = Train(dataset_path,save_path)
 
 	train.train(model)
 
